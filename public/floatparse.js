@@ -1,4 +1,4 @@
-var socket = io.connect('http://api.csgofloat.com:1738');
+var socket = io.connect('https://api.csgofloat.com:1738', {secure: true});
 
 function lookup() {
   var lookup_string = decodeURIComponent($('#input_url').val());

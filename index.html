@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CSGOFloat</title>
+
+  	<meta charset="utf-8">
+
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-69413620-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</head>
+<body>
+	<div style="width: 100%;">
+		<center style="margin-left: auto; margin-right: auto; position: relative;">
+			<button type="button" class="btn btn-primary btn-lg button" data-toggle="modal" onclick="location.href='/'">Home</button>
+			<button type="button" class="btn btn-primary btn-lg button" data-toggle="modal" data-target="#help">Info</button>
+			<button type="button" class="btn btn-primary btn-lg button" data-toggle="modal" data-target="#email" data-whatever="@mdo">Contact Us</button>
+			<button type="button" class="btn btn-primary btn-lg button" data-toggle="modal" data-target="#api">API</button>
+
+			<button type="button" class="btn btn-primary btn-lg button" data-toggle="modal" onclick="location.href='https://www.facebook.com/csgofloat'">Facebook</button>
+		</center>
+		<div class="modal fade" id="help" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<center><h4 class="modal-title">How To Use CSGO Float</h4></center>
+					</div>
+					<div class="modal-body">
+						<p>
+							CSGOFloat can provide the wear value (float value) and paint index of any gun if you have the inspect link. The float value of a gun defines the texture wear, there are different ranges for different wear values:
+						</p>
+
+						<center>
+							<div class="list-group">
+							  <a href="#" class="list-group-item active">
+							    Float Wear Ranges
+							  </a>
+							  <a href="#" class="list-group-item">0.00 - 0.07 | Factory New</a>
+							  <a href="#" class="list-group-item">0.07 - 0.15 | Minimal Wear</a>
+							  <a href="#" class="list-group-item">0.15 - 0.38 | Field-Tested</a>
+							  <a href="#" class="list-group-item">0.38 - 0.45 | Well-Worn</a>
+							  <a href="#" class="list-group-item">0.45 - 1.00 | Battle-Scarred</a>
+							</div>
+						</center>
+						<p>
+							<b>NOTE</b>: Some skins have a max and min float value. For example, the AK-47 Redline has a minimum float of 0.10 and maximum float of 0.70. Don't worry, this info will also be sent to you when the lookup is processed. 
+						</p>
+						<h2>How to Use</h2>
+						<p>
+							<br>
+							<b>Step 1</b>: Find the inspect link of the desired gun off of Steam Community Market (or any inspect link)
+						</p>
+						<img src="/inspect_demo_1.png" style="width: 100%" alt="How to get the Inspect Link"></img>
+						<p>
+							<br>
+							<b>Step 2</b>: Paste the inspect link into the site's main search bar and click "Lookup"
+						</p>
+						<img src="/inspect_demo_2.png" style="width: 100%" alt="How to get the Inspect Link"></img>
+						<p>	
+							<br>
+							<b>Step 3</b>: You will get put into a queue, and once your request gets processed, the item data will be displayed. The red "line" on the green progress bar shows the wear in comparison to the possible wear range of that skin. The more left it is (towards the minimum), the better the texture wear on the skin is.
+						</p>
+						<img src="/inspect_demo_3.png" style="width: 100%" alt="How to get the Inspect Link"></img>
+
+
+
+
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="api" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<center><h4 class="modal-title">CSGOFloat Market API</h4></center>
+					</div>
+					<div class="modal-body">
+						<p>
+							<b>NOTE:</b> You can only have one pending request per IP at a time!
+						</p>
+						<p>
+							CSGOFloat now has a free unlimited API for fetching item data. If you'd like to implement your own custom API, check out the Github repo!
+						</p>
+						
+						<h2>How to Use</h2>
+						<p>
+							
+							<center>URL Endpoint: <code>api.csgofloat.com:1738</code></center>
+
+							<br>
+							<code>GET /api</code>
+							<br>
+							<center>
+								<table class="table" style="margin-top: 10px;">
+								  <tr>
+								    <th>Parameter</th>
+								    <th>Description</th>
+								  </tr>
+								  <tr>
+								    <td>s</td>
+								    <td>Optional: If an inventory item, fill out this parameter from the inspect URL</td>
+								  </tr>
+								  <tr>
+								    <td>a</td>
+								    <td>Required: Inspect URL "a" param</td>
+								  </tr>
+								  <tr>
+								    <td>d</td>
+								    <td>Required: Inspect URL "d" param</td>
+								  </tr>
+								  <tr>
+								    <td>m</td>
+								    <td>Optional: If a market item, fill out this parameter from the inspect URL</td>
+								  </tr>
+								</table>
+							</center>
+
+							Examples:
+							<p>
+								<pre>api.csgofloat.com:1738/api?m=563330426657599553&a=6710760926&d=9406593057029549017</pre>
+								or (market item)
+								<pre>api.csgofloat.com:1738/api?s=76561198084749846&a=6777992090&d=3378412659870065794</pre>
+							</p>
+							
+							</br>
+							or you can send the inspect URL and we'll parse it
+							
+							<center>
+								<table class="table" style="margin-top: 10px;">
+								  <tr>
+								    <th>Parameter</th>
+								    <th>Description</th>
+								  </tr>
+								  <tr>
+								    <td>url</td>
+								    <td>Required: Inspect URL of the CSGO item</td>
+								  </tr>
+								</table>
+							</center>
+							
+							Examples:
+							<p>
+								<pre>api.csgofloat.com:1738/api?url=steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561198084749846A698323590D7935523998312483177</pre>
+								or (market item)
+								<pre>api.csgofloat.com:1738/api?url=steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20M625254122282020305A6760346663D30614827701953021</pre>
+
+
+							</p>
+
+						</p>
+						<br>
+						<h2>Reply</h2>
+						<p>
+							The reply of this API is based upon <a href="https://github.com/SteamRE/SteamKit/blob/master/Resources/Protobufs/csgo/cstrike15_gcmessages.proto#L674">this CSGO protobuf</a>. I recommend looking at the Github in order to understand how some of these parameters work.
+
+							<center>
+								<table class="table" style="margin-top: 10px;">
+								  <tr>
+								    <th>Attribute</th>
+								    <th>Data Type</th>
+								    <th>Description</th>
+								  </tr>
+								  <tr>
+								    <td>itemid</td>
+								    <td>uint32</td>
+								    <td>Item ID</td>
+								  </tr>
+								  <tr>
+								    <td>defindex</td>
+								    <td>uint32</td>
+								    <td>Weapon ID</td>
+								  </tr>
+								  <tr>
+								    <td>paintindex</td>
+								    <td>uint32</td>
+								    <td>Paint ID of the weapon (skin)</td>
+								  </tr>
+								  <tr>
+								    <td>rarity</td>
+								    <td>uint32</td>
+								    <td>Rarity value of the weapon</td>
+								  </tr>
+								  <tr>
+								    <td>quality</td>
+								    <td>uint32</td>
+								    <td>Quality of the weapon</td>
+								  </tr>
+								  <tr>
+								    <td>paintwear</td>
+								    <td>uint32</td>
+								    <td>Wear of the exterior of the skin</td>
+								  </tr>
+								  <tr>
+								    <td>paintseed</td>
+								    <td>uint32</td>
+								    <td>Seed for the RNG that defines how to place the skin texture</td>
+								  </tr>
+								  <tr>
+								    <td>killeatervalue</td>
+								    <td>uint32</td>
+								    <td>If the item is StatTrak, this is the amount of kills</td>
+								  </tr>
+								  <tr>
+								    <td>customname</td>
+								    <td>string</td>
+								    <td>If the item has a nametag, this is the custom name</td>
+								  </tr>
+								  <tr>
+								    <td>stickers</td>
+								    <td>array</td>
+								    <td>Contains data on the placement of stickers</td>
+								  </tr>
+								  <tr>
+								    <td>origin</td>
+								    <td>uint32</td>
+								    <td>Origin ID of the weapon</td>
+								  </tr>
+								  <tr>
+								    <td>floatvalue</td>
+								    <td>float</td>
+								    <td>Exterior wear of the skin in its float representation</td>
+								  </tr>
+								  <tr>
+								    <td>imageurl</td>
+								    <td>string</td>
+								    <td>Optional: Image of the item</td>
+								  </tr>
+								  <tr>
+								    <td>min</td>
+								    <td>string</td>
+								    <td>Minimum wear of the skin</td>
+								  </tr>
+								  <tr>
+								    <td>max</td>
+								    <td>string</td>
+								    <td>Maximum wear of the skin</td>
+								  </tr>
+								  <tr>
+								    <td>itemid_int</td>
+								    <td>uint32</td>
+								    <td>ID of the item</td>
+								  </tr>
+								  <tr>
+								    <td>item_name</td>
+								    <td>uint32</td>
+								    <td>Optional: Name of the skin</td>
+								  </tr>
+								  <tr>
+								    <td>weapon_type</td>
+								    <td>string</td>
+								    <td>Weapon type name</td>
+								  </tr>
+								</table>
+							</center>
+						</p>
+						<pre align="left">
+{
+	"iteminfo": {
+		"accountid": null,
+		"itemid": {
+			"low": -1811942502,
+			"high": 1,
+			"unsigned": true
+		},
+		"defindex": 32,
+		"paintindex": 389,
+		"rarity": 6,
+		"quality": 4,
+		"paintwear": 1039973876,
+		"paintseed": 933,
+		"killeaterscoretype": null,
+		"killeatervalue": null,
+		"customname": null,
+		"stickers": [],
+		"inventory": 3221225475,
+		"origin": 4,
+		"questid": null,
+		"dropreason": null,
+		"floatvalue": 0.12340918183326721,
+		"imageurl": "http://media.steampowered.com/apps/730/icons/econ/default_generated/weapon_hkp2000_cu_p2000_fire_elemental_light_large.1e57d4d9f1c51e613c1923377aa55fab4b0ab1bc.png",
+		"min": "0.000000",
+		"max": "0.600000",
+		"itemid_int": 2483024794,
+		"item_name": "Fire Elemental",
+		"s": "76561198084749846",
+		"a": "6777992090",
+		"d": "3378412659870065794",
+		"m": "0",
+		"market": false,
+		"weapon_type": "P2000"
+	}
+}
+							
+						</pre>
+
+						<h2>Errors</h2>
+						<p>
+							The API might be unstable at times, so it is important that you handle the errors correctly.
+
+							<h3>Error Codes</h3>
+							
+							<table class="table" style="margin-top: 10px; text-align: left;">
+							  <tr>
+							    <th>Code</th>
+							    <th>Description</th>
+							  </tr>
+							  <tr>
+							    <td>1</td>
+							    <td>Improper Parameter Structure</td>
+							  </tr>
+							  <tr>
+							    <td>2</td>
+							    <td>Invalid Inspect Link Structure</td>
+							  </tr>
+							  <tr>
+							    <td>3</td>
+							    <td>You may only have one pending request at a time</td>
+							  </tr>
+							  <tr>
+							    <td>4</td>
+							    <td>Valve's servers didn't reply with data</td>
+							  </tr>
+							</table>
+
+							Example Error
+
+							<pre align="left">
+{
+	"error": "Valve's servers didn't reply",
+	"code": 4
+}	
+							</pre>
+
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="email" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  			<div class="modal-dialog" role="document">
+    			<div class="modal-content">
+      				<div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<center><h4 class="modal-title">Contact Us</h4></center>
+      				</div>
+      				<div class="modal-body">
+      					<h2>Support through Steam</h2>
+      					<h4>(Please comment on their profile before adding them)</h4>
+						<h3><small>General Support</small><br><a href="http://steamcommunity.com/profiles/76561198066173602">perplex</a></h3>
+						<h3><small>Other Inquiries</small><br><a href="http://steamcommunity.com/id/Step7750/">Step7750</a></h3>
+
+
+      					<h2>Support through Email</h2>
+      					<h3><small>General Support</small><br><a href="mailto:support@csgofloat.com" target="_top">support@csgofloat.com</a></h3>
+      					<h3><small>Security Issues</small><br><a href="mailto:security@csgofloat.com" target="_top">security@csgofloat.com</a></h3>
+      					<h3><small>Suggestions</small><br><a href="mailto:suggestions@csgofloat.com" target="_top">suggestions@csgofloat.com</a></h3>
+      					<h3><small>Back-end Developer</small><br><a href="mailto:Step7750@csgofloat.com" target="_top">Step7750@csgofloat.com</a></h3>
+      					<h3><small>Front-end Developer</small><br><a href="mailto:perplex@csgofloat.com" target="_top">perplex@csgofloat.com</a></h3>
+      				</div>
+      				<div class="modal-footer">
+        				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      				</div>
+    			</div>
+  			</div>
+		</div>
+	</div>
+
+	<div class="center_div" style="position:absolute; top:0; bottom:0; right:0; left:0;">
+		<div class="inner" style="width: 90%; max-width: 700px; margin:auto;">
+			<img src="logo.png" id="img_center" style="width: 100%; max-width: 550px;" draggable=false>
+			<center>
+				<div style="width: 100%; margin-top: 20px; margin-bottom: 10px;">
+
+					<div class="input-group" id="singlelookup">
+						<input type="text" class="form-control" placeholder="Inspect Link" id="input_url">
+					      <span class="input-group-btn">
+					        <button class="btn btn-default" type="button" onclick="lookup()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Lookup</button>
+					      </span>
+				    </div>
+				</div>
+			</center>
+
+			
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- CSGOFloat Main Lookup Ad -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-5585208716137601"
+			     data-ad-slot="2146331372"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			
+
+			<div style="margin-top: 10px; height:250px; overflow-y: auto; resize: vertical;" id="messages"></div>
+		</div>
+
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+		<script src="floatparse.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script>
+	</div>
+</body>
+</html>

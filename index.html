@@ -28,11 +28,9 @@
 <body>
 	<div style="width: 100%;">
 		<center style="margin-left: auto; margin-right: auto; position: relative;">
-			<button type="button" class="btn btn-primary btn-lg button" data-toggle="modal" onclick="location.href='/'">Home</button>
 			<button type="button" class="btn btn-primary btn-lg button" data-toggle="modal" data-target="#help">Info</button>
 			<button type="button" class="btn btn-primary btn-lg button" data-toggle="modal" data-target="#email" data-whatever="@mdo">Contact Us</button>
 			<button type="button" class="btn btn-primary btn-lg button" data-toggle="modal" data-target="#api">API</button>
-
 			<button type="button" class="btn btn-primary btn-lg button" data-toggle="modal" onclick="location.href='https://www.facebook.com/csgofloat'">Facebook</button>
 		</center>
 		<div class="modal fade" id="help" role="dialog">
@@ -109,10 +107,14 @@
 						<h2>How to Use</h2>
 						<p>
 							
-							<center>URL Endpoint: <code>api.csgofloat.com:1738</code></center>
-
+							<center>URL Endpoint: <code>api.csgofloat.com</code>
+									<br>
+									<b>HTTPS PORT:</b> <code>1738</code>
+									<b>HTTP PORT:</b> <code>1739</code>
+							</center>
 							<br>
-							<code>GET /api</code>
+							<br>
+							<code>GET /</code>
 							<br>
 							<center>
 								<table class="table" style="margin-top: 10px;">
@@ -141,9 +143,9 @@
 
 							Examples:
 							<p>
-								<pre>api.csgofloat.com:1738/api?m=563330426657599553&a=6710760926&d=9406593057029549017</pre>
+								<pre>api.csgofloat.com:1738?m=563330426657599553&a=6710760926&d=9406593057029549017</pre>
 								or (market item)
-								<pre>api.csgofloat.com:1738/api?s=76561198084749846&a=6777992090&d=3378412659870065794</pre>
+								<pre>api.csgofloat.com:1738?s=76561198084749846&a=6777992090&d=3378412659870065794</pre>
 							</p>
 							
 							</br>
@@ -164,9 +166,9 @@
 							
 							Examples:
 							<p>
-								<pre>api.csgofloat.com:1738/api?url=steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561198084749846A698323590D7935523998312483177</pre>
+								<pre>api.csgofloat.com:1738?url=steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561198084749846A698323590D7935523998312483177</pre>
 								or (market item)
-								<pre>api.csgofloat.com:1738/api?url=steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20M625254122282020305A6760346663D30614827701953021</pre>
+								<pre>api.csgofloat.com:1738?url=steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20M625254122282020305A6760346663D30614827701953021</pre>
 
 
 							</p>

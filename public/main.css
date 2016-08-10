@@ -16,7 +16,7 @@ body{
 }
 
 .spacing{
- padding-left: 70px;
+    padding-left: 50px;
 }
 
 .spacing-icon{
@@ -34,7 +34,7 @@ body{
 }
 
 #center {
-    padding-left: 400px;
+    padding-left: 380px;
     font-size: 23px;
 }
 

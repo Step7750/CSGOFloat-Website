@@ -47,16 +47,74 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav" id="center" >
+                            <li class="spacing"><a style="outline: none" data-toggle="modal" href="#help"><span class="glyphicon glyphicon-info-sign spacing-icon" aria-hidden="true"></span>Help</a></li>
                             <li class="spacing"><a style="outline: none" data-toggle="modal" href="#api"><span class="glyphicon glyphicon-wrench spacing-icon" aria-hidden="true"></span>API</a></li>
                             <li class="spacing"><a href="https://github.com/Step7750/CSGOFloat"><span class="glyphicon glyphicon-globe spacing-icon" aria-hidden="true"></span>Github</a></li>
                             <li class="spacing"><a href="https://chrome.google.com/webstore/detail/csgofloat-market-checker/jjicbefpemnphinccgikpdaagjebbnhg?hl=en"><span class="glyphicon glyphicon-cloud-download spacing-icon" aria-hidden="true"></span>Chrome Extension</a></li>
                             <li class="spacing"><a href="https://www.facebook.com/csgofloat"><span class="glyphicon glyphicon-book spacing-icon" aria-hidden="true"></span>Facebook</a></li>
-                            <li class="spacing"><a style="outline: none" data-toggle="modal" href="#email"><span class="glyphicon glyphicon-inbox spacing-icon" aria-hidden="true"></span>Contact Us</a></li>
+                            <li class="spacing"><a style="outline: none" data-toggle="modal" href="#email"><span class="glyphicon glyphicon-envelope spacing-icon" aria-hidden="true"></span>Contact Us</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
 	    </div>
+
+        <div class="modal fade" id="help" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<center><h4 class="modal-title">How To Use CSGO Float</h4></center>
+					</div>
+					<div class="modal-body">
+						<p>
+							CSGOFloat can provide the wear value (float value) and paint index of any gun if you have the inspect link. The float value of a gun defines the texture wear, there are different ranges for different wear values:
+						</p>
+
+						<center>
+							<div class="list-group">
+							  <a href="#" class="list-group-item active">
+							    Float Wear Ranges
+							  </a>
+							  <a href="#" class="list-group-item">0.00 - 0.07 | Factory New</a>
+							  <a href="#" class="list-group-item">0.07 - 0.15 | Minimal Wear</a>
+							  <a href="#" class="list-group-item">0.15 - 0.38 | Field-Tested</a>
+							  <a href="#" class="list-group-item">0.38 - 0.45 | Well-Worn</a>
+							  <a href="#" class="list-group-item">0.45 - 1.00 | Battle-Scarred</a>
+							</div>
+						</center>
+						<p>
+							<b>NOTE</b>: Some skins have a max and min float value. For example, the AK-47 Redline has a minimum float of 0.10 and maximum float of 0.70. Don't worry, this info will also be sent to you when the lookup is processed.
+						</p>
+						<h2>How to Use</h2>
+						<p>
+							<br>
+							<b>Step 1</b>: Find the inspect link of the desired gun off of Steam Community Market (or any inspect link)
+						</p>
+						<img src="public/inspect_demo_1.png" style="width: 100%" alt="How to get the Inspect Link">
+						<p>
+							<br>
+							<b>Step 2</b>: Paste the inspect link into the site's main search bar and click "Lookup"
+						</p>
+						<img src="public/inspect_demo_2.png" style="width: 100%" alt="How to get the Inspect Link">
+						<p>
+							<br>
+							<b>Step 3</b>: You will get put into a queue, and once your request gets processed, the item data will be displayed. The red "line" on the green progress bar shows the wear in comparison to the possible wear range of that skin. The more left it is (towards the minimum), the better the texture wear on the skin is.
+						</p>
+						<img src="public/inspect_demo_3.png" style="width: 100%" alt="How to get the Inspect Link">
+
+
+
+
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
         <div class="modal fade" id="api" tabindex="-1" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">

@@ -33,9 +33,15 @@ body{
 	margin-top: 60px;
 }
 
-#center {
-    padding-left: 380px;
-    font-size: 23px;
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  font-size: 23px;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
 }
 
 #img_center {
@@ -56,28 +62,4 @@ body{
 .progress {
   position: relative;
   overflow: visible;
-}
-
-@media screen and (max-width: 1440px){
-    #center{
-        padding-left: 210px;
-    }
-}
-
-@media screen and (max-width: 1024px){
-    #center{
-        padding-left: 0;
-    }
-}
-
-@media only screen and (max-width: 711px) {
-    .center_div {
-    	margin-top: 120px;
-    }
-}
-
-@media screen and (max-width: 396px) {
-    .center_div {
-    	margin-top: 180px;
-    }
 }

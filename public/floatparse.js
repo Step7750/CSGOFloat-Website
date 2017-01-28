@@ -3,10 +3,8 @@ var socket = io.connect('https://api.csgofloat.com:1738', {secure: true});
 function lookup() {
   var lookup_string = decodeURIComponent($('#input_url').val());
 
-  // check whether the structure is valid, this doesn't mean that it is necessarily valid though
-  var regexed = lookup_string.match(/steam:\/\/rungame\/730\/\d*\/\+csgo_econ_action_preview [SM]\d*[A]\d*[D]\d*/g);
-
-  // this is obviously also checked on the server, since some kid is going to think they can send malformed requests
+  // Check proper structure client side
+  var regexed = lookup_string.match(/^steam:\/\/rungame\/730\/\d+\/\+csgo_econ_action_preview [SM]\d+[A]\d+[D]\d+$/g);
 
   if (regexed != null && regexed == lookup_string) {
     // this is most likely a valid inspect link structure (afaik, still to be confirmed)
@@ -21,28 +19,32 @@ function lookup() {
   }
 }
 
+var data = '<div class="alert alert-info" role="alert">Trying to join the API server...</div>';
+$(data).hide().prependTo("#messages").slideDown("slow");
+
+
 socket.on("joined", function() {
     data = '<div class="alert alert-success" role="alert">Successfully joined the server</div>';
     $(data).hide().prependTo("#messages").slideDown("slow");
 });
 
 socket.on("successmessage", function(msg) {
-    data = '<div class="alert alert-success" role="alert">' + msg +'</div>';
+    data = '<div class="alert alert-success" role="alert">' + msg['msg'] +'</div>';
     $(data).hide().prependTo("#messages").slideDown("slow");
 });
 
 socket.on("infomessage", function(msg) {
-    data = '<div class="alert alert-info" role="alert">' + msg +'</div>';
+    data = '<div class="alert alert-info" role="alert">' + msg['msg'] +'</div>';
     $(data).hide().prependTo("#messages").slideDown("slow");
 });
 
 socket.on("warningmessage", function(msg) {
-    data = '<div class="alert alert-warning" role="alert">' + msg +'</div>';
+    data = '<div class="alert alert-warning" role="alert">' + msg['warning'] +'</div>';
     $(data).hide().prependTo("#messages").slideDown("slow");
 });
 
 socket.on("errormessage", function(msg) {
-    data = '<div class="alert alert-danger" role="alert">' + msg +'</div>';
+    data = '<div class="alert alert-danger" role="alert">' + msg['error'] +'</div>';
     $(data).hide().prependTo("#messages").slideDown("slow");
 });
 

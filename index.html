@@ -10,26 +10,23 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js" defer></script>
+    <script src="public/floatparse.js" defer></script>
 
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="public/main.css">
-
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-69413620-1', 'auto');
-	  ga('send', 'pageview');
-
+	   ga('create', 'UA-69413620-1', 'auto');
+	   ga('send', 'pageview');
 	</script>
 </head>
     <body>
@@ -104,11 +101,6 @@
 							<b>Step 3</b>: You will get put into a queue, and once your request gets processed, the item data will be displayed. The red "line" on the green progress bar shows the wear in comparison to the possible wear range of that skin. The more left it is (towards the minimum), the better the texture wear on the skin is.
 						</p>
 						<img src="public/inspect_demo_3.png" style="width: 100%" alt="How to get the Inspect Link">
-
-
-
-
-
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -312,87 +304,84 @@
                                     </table>
                                 </center>
                             <p></p>
-                            <pre align="left">{
-        "iteminfo": {
-            "accountid": null,
-            "itemid": {
-                "low": -1811942502,
-                "high": 1,
-                "unsigned": true
-            },
-            "defindex": 32,
-            "paintindex": 389,
-            "rarity": 6,
-            "quality": 4,
-            "paintwear": 1039973876,
-            "paintseed": 933,
-            "killeaterscoretype": null,
-            "killeatervalue": null,
-            "customname": null,
-            "stickers": [],
-            "inventory": 3221225475,
-            "origin": 4,
-            "questid": null,
-            "dropreason": null,
-            "floatvalue": 0.12340918183326721,
-            "imageurl": "http://media.steampowered.com/apps/730/icons/econ/default_generated/weapon_hkp2000_cu_p2000_fire_elemental_light_large.1e57d4d9f1c51e613c1923377aa55fab4b0ab1bc.png",
-            "min": "0.000000",
-            "max": "0.600000",
-            "itemid_int": 2483024794,
-            "item_name": "Fire Elemental",
-            "s": "76561198084749846",
-            "a": "6777992090",
-            "d": "3378412659870065794",
-            "m": "0",
-            "market": false,
-            "weapon_type": "P2000"
-        }
+<pre align="left">
+{
+    "iteminfo": {
+        "accountid": null,
+        "itemid": {
+            "low": -1811942502,
+            "high": 1,
+            "unsigned": true
+        },
+        "defindex": 32,
+        "paintindex": 389,
+        "rarity": 6,
+        "quality": 4,
+        "paintwear": 1039973876,
+        "paintseed": 933,
+        "killeaterscoretype": null,
+        "killeatervalue": null,
+        "customname": null,
+        "stickers": [],
+        "inventory": 3221225475,
+        "origin": 4,
+        "questid": null,
+        "dropreason": null,
+        "floatvalue": 0.12340918183326721,
+        "imageurl": "http://media.steampowered.com/apps/730/icons/econ/default_generated/weapon_hkp2000_cu_p2000_fire_elemental_light_large.1e57d4d9f1c51e613c1923377aa55fab4b0ab1bc.png",
+        "min": "0.000000",
+        "max": "0.600000",
+        "itemid_int": 2483024794,
+        "item_name": "Fire Elemental",
+        "s": "76561198084749846",
+        "a": "6777992090",
+        "d": "3378412659870065794",
+        "m": "0",
+        "market": false,
+        "weapon_type": "P2000"
     }
-
-                            </pre>
-
+}
+</pre>
                             <h2>Errors</h2>
-                            <p>
-                                The API might be unstable at times, so it is important that you handle the errors correctly.
-
-                                </p><h3>Error Codes</h3>
-
+                            <p>The API might be unstable at times, so it is important that you handle the errors correctly.</p>
+                            <h3>Error Codes</h3>
                                 <table class="table" style="margin-top: 10px; text-align: left;">
-                                  <tbody><tr>
-                                    <th>Code</th>
-                                    <th>Description</th>
-                                  </tr>
-                                  <tr>
-                                    <td>1</td>
-                                    <td>Improper Parameter Structure</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td>Invalid Inspect Link Structure</td>
-                                  </tr>
-                                  <tr>
-                                    <td>3</td>
-                                    <td>You may only have one pending request at a time</td>
-                                  </tr>
-                                  <tr>
-                                    <td>4</td>
-                                    <td>Valve's servers didn't reply in time</td>
-                                  </tr>
-                                  <tr>
-                                    <td>5</td>
-                                    <td>Valve's servers appear to be offline, please try again later!</td>
-                                  </tr>
-                                </tbody></table>
+                                    <tbody>
+                                        <tr>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Improper Parameter Structure</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Invalid Inspect Link Structure</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>You may only have one pending request at a time</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Valve's servers didn't reply in time</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Valve's servers appear to be offline, please try again later!</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
                                 Example Error
 
-                                <pre align="left">{
-        "error": "Valve's servers didn't reply",
-        "code": 4
-    }
-                                </pre>
-
-                            <p></p>
+<pre align="left">
+{
+    "error": "Valve's servers didn't reply",
+    "code": 4
+}
+</pre>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -428,7 +417,7 @@
                 </div>
             </div>
         <div class="center_div" style="position: absolute; top:0; bottom: 0px; right: 0; left: 0;">
-            <div class="inner" style="width: 90%; max-width: 700px; margin:auto">
+            <div class="inner" style="width: 90%; max-width: 728px; margin:auto">
                 <img src="public/logo.png" id="img_center" style="width: 100%; max-width: 550px" draggable="false">
                 <center>
                     <div style="width: 100%; margin-top: 20px; margin-bottom: 10px;">
@@ -440,20 +429,19 @@
                         </div>
                     </div>
 			    </center>
-                <div style="margin-top: 10px; height:250px; overflow-y: auto; resize: vertical;" id="messages"></div>
+                <div style="margin-top: 10px; margin-bottom: 10px; height:250px; overflow-y: auto; resize: vertical;" id="messages"></div>
+
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Main CSGOFloat Banner -->
                 <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-5585208716137601"
-                     data-ad-slot="2146331372"
-                     data-ad-format="auto">
-
-                </ins>
+                     data-ad-slot="8187407374"
+                     data-ad-format="auto"></ins>
                 <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
-            <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-            <script src="public/floatparse.js"></script>
         </div>
     </body>
 </html>

@@ -12,11 +12,11 @@
 	<script async="" src="//www.google-analytics.com/analytics.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.2.0/socket.io.min.js" defer></script>
     <script src="public/floatparse.js" defer></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="public/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" defer>
+	<link rel="stylesheet" type="text/css" href="public/main.css" defer>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 	<script>
@@ -31,7 +31,7 @@
 </head>
     <body>
         <div>
-            <nav class="navbar navbar-default navbar-fixed-top">
+            <nav class="navbar navbar-default navbar-static-top">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -396,27 +396,31 @@
                 </div>
             </div>
         <div class="modal fade" id="email" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">×</button>
-                            <center><h4 class="modal-title">Contact Us</h4></center>
-                        </div>
-                        <div class="modal-body">
-                            <h2>Support through Steam</h2>
-                            <h4>(Please comment on their profile before adding them)</h4>
-                            <h3><small>General Support</small><br><a href="http://steamcommunity.com/profiles/76561198066173602">perplex</a></h3>
-                            <h3><small>Backend/Other Inquiries</small><br><a href="http://steamcommunity.com/id/Step7750/">Step7750</a></h3>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <center><h4 class="modal-title">Contact Us</h4></center>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Support through Steam</h2>
+                        <h4>(Please comment on their profile before adding them)</h4>
+                        <h3><small>General Support</small><br><a href="http://steamcommunity.com/profiles/76561198066173602">perplex</a></h3>
+                        <h3><small>Backend/Other Inquiries</small><br><a href="http://steamcommunity.com/id/Step7750/">Step7750</a></h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
-        <div class="center_div" style="position: absolute; top:0; bottom: 0px; right: 0; left: 0;">
-            <div class="inner" style="width: 90%; max-width: 728px; margin:auto">
-                <img src="public/logo.png" id="img_center" style="width: 100%; max-width: 550px" draggable="false">
+        </div>
+        <div class="center_div">
+            <div class="inner" style="">
+                <div style="color: white;">Advertisement</div>
+                <a href="https://cs.money?s=float">
+                    <img id="banner" alt="CS.Money Automated Trading Site" title="CS.Money Automated Trading Site" draggable="false">
+                </a>
+                <img src="public/logo.png" id="img_center" draggable="false"></img>
                 <center>
                     <div style="width: 100%; margin-top: 20px; margin-bottom: 10px;">
                         <div class="input-group" id="singlelookup">
@@ -427,18 +431,7 @@
                         </div>
                     </div>
 			    </center>
-                <div style="margin-top: 10px; margin-bottom: 10px; height:250px; overflow-y: auto; resize: vertical;" id="messages"></div>
-
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- Main CSGOFloat Banner -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-5585208716137601"
-                     data-ad-slot="8187407374"
-                     data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <div id="messages"></div>
             </div>
         </div>
     </body>

@@ -15,23 +15,29 @@ body{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282828', endColorstr='#4A4A4A',GradientType=0 );
 }
 
-.spacing{
+.spacing {
     padding-left: 23px;
     padding-right: 23px;
 }
 
-.spacing-icon{
+.spacing-icon {
     padding-right: 5px
 }
 
-.nav a{
-    font-size: 0.8em; !important;
+.nav a {
+    font-size: 0.8em !important;
 }
+
 .center_div {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+}
+
+.inner {
+    width: 90%;
+    max-width: 728px;
+    margin:auto;
 }
 
 .navbar .navbar-nav {
@@ -48,6 +54,22 @@ body{
 #img_center {
     display: block;
     margin: 0 auto;
+    width: 100%;
+    max-width: 550px;
+    margin-top: 50px;
+}
+
+#messages {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height:250px;
+    overflow-y: auto;
+    resize: vertical;
+}
+
+#banner {
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .alert {

@@ -2,7 +2,7 @@ const bannerImages = ['public/money1.png', 'public/money2.png', 'public/money3.p
 
 $('#banner').attr('src', bannerImages[Math.floor(Math.random()*bannerImages.length)]);
 
-const socket = io.connect('https://api.csgofloat.com', {secure: true});
+const socket = io.connect('https://api.csgofloat.com:1738', {secure: true});
 
 const wear_ranges = [[0.00, 0.07], [0.07, 0.15], [0.15, 0.38], [0.38, 0.45], [0.45, 1.00]];
 const wear_names = ['Factory New', 'Minimal Wear', 'Field-Tested', 'Well-Worn', 'Battle-Scarred'];

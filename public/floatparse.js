@@ -1,3 +1,6 @@
+const bannerImages = ['public/money1.png', 'public/money2.png', 'public/money3.png'];
+$('#banner').attr('src', bannerImages[Math.floor(Math.random()*bannerImages.length)]);
+
 const socket = io.connect('https://api.csgofloat.com');
 
 const wear_ranges = [[0.00, 0.07], [0.07, 0.15], [0.15, 0.38], [0.38, 0.45], [0.45, 1.00]];

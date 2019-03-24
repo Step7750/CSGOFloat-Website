@@ -126,7 +126,7 @@ const generateItemHTML = function(itemdata, itemname, wear_name) {
         <div class='itemname'>${itemname}</div>
         <div class='float_val'>Float Value: ${itemdata.floatvalue}</div>
         Paint Seed: ${itemdata.paintseed}</br>
-        Item ID: ${itemdata.itemid_int}</br>
+        Item ID: ${itemdata.itemid}</br>
         <a href='${generateInspectURL(itemdata)}' class='btn btn-info'>Inspect in Game</a>
     `;
 }

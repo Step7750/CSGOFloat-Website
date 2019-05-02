@@ -67,8 +67,6 @@ socket.on('floatmessage', (itemdata) => {
         }
     }
 
-    let itemname = `${generateItemName(itemdata)} (${wear_name})`;
-
     let data = `
         <div class='alert alert-info' role='alert' style='min-height: 150px;' id='${itemdata.itemid_int}_success'>
             <div style='position: relative;'>
@@ -81,7 +79,7 @@ socket.on('floatmessage', (itemdata) => {
                 <div style='position: absolute; top: 20px; left: 0;'>${wear_range[0].toFixed(2)}</div>
                 <div style='position: absolute; top: 20px; right: 0;'>${wear_range[1].toFixed(2)}</div>
             </div>
-            ${generateItemHTML(itemdata, itemname, wear_name)}
+            ${generateItemHTML(itemdata)}
         </div>
     `;
 
@@ -110,7 +108,7 @@ const lookup = function() {
     $('#input_url').val('');
 }
 
-const generateItemHTML = function(itemdata, itemname, wear_name) {
+const generateItemHTML = function(itemdata) {
     let img_html = '';
 
     if (itemdata.imageurl) {
@@ -123,7 +121,7 @@ const generateItemHTML = function(itemdata, itemname, wear_name) {
 
     return `
         ${img_html}
-        <div class='itemname'>${itemname}</div>
+        <div class='itemname'>${itemdata.full_item_name}</div>
         <div class='float_val'>Float Value: ${itemdata.floatvalue}</div>
         Paint Seed: ${itemdata.paintseed}</br>
         Item ID: ${itemdata.itemid}</br>

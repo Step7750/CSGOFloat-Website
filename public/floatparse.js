@@ -124,7 +124,7 @@ const generateItemHTML = function(itemdata) {
         <div class='itemname'>${itemdata.full_item_name}</div>
         <div class='float_val'>Float Value: ${itemdata.floatvalue}</div>
         Paint Seed: ${itemdata.paintseed}</br>
-        Item ID: ${itemdata.itemid}</br>
+        Item ID: ${itemdata.a}</br>
         <a href='${generateInspectURL(itemdata)}' class='btn btn-info'>Inspect in Game</a>
     `;
 }
@@ -132,24 +132,4 @@ const generateItemHTML = function(itemdata) {
 const generateInspectURL = function(item) {
     if (item.s === '0') return `steam://rungame/730/76561202255233023/+csgo_econ_action_preview M${item.m}A${item.a}D${item.d}`;
     else return `steam://rungame/730/76561202255233023/+csgo_econ_action_preview S${item.s}A${item.a}D${item.d}`;
-}
-
-const generateItemName = function(itemdata) {
-    let itemname = '';
-
-    if (itemdata.defindex >= 500) {
-        // this is a knife, add the star symbol
-        itemname += '★ ';
-    }
-    if (itemdata.killeatervalue !== null) {
-        itemname += 'StatTrak™ ';
-    }
-
-    itemname += itemdata.weapon_type;
-
-    if (itemdata.item_name !== '-') {
-        itemname += ' | ' + itemdata.item_name;
-    }
-
-    return itemname;
 }
